@@ -1,8 +1,8 @@
 # Hoodwinked
 
-Hoodwinked is a text-based murder mystery game modeled after Mafia and Among Us. By forcing humans and language models to communicate in a strategic environment, this game teaches language models the skills of deception, lie detection, and goal-directed communication. 
+Hoodwinked is a text-based murder mystery game modeled after Mafia and Among Us. By forcing humans and language models to communicate in a strategic environment, this game teaches language models the skills of deception, lie detection, and goal-directed communication. This is the official repo for "[Hoodwinked: Cooperation and Deception in a Text-Based Game for Language Models](https://arxiv.org/abs/2308.01404)."
 
-The best way to understand the game is to play it for yourself. Clone the repo and run demo.py to try to outsmart GPT-3 and escape the house alive!
+The best way to understand the game is to play it for yourself. You can play it in your browser at [https://hoodwinked.ai](https://hoodwinked.ai). To play it locally, clone the repo and run demo.py. 
 
 ## Getting Started
 First, clone the repo (e.g. `git clone https://github.com/aogara-ds/hoodwinked`). 
@@ -18,10 +18,12 @@ pip install -r requirements.txt
 Finally, you'll need to store an OpenAI API Key in a .env file, like this:
 ```
 touch .env
-echo "OPENAI_API_KEY = "YOUR_KEY_GOES_HERE" > .env
+echo 'OPENAI_API_KEY="YOUR_KEY_GOES_HERE"' > .env
 ```
 
-Now you can play the game! Just run `python3 demo.py`. You can edit player names and roles in `demo.py`. 
+Now you can play the game! Just run `python demo.py`. You can edit player names and roles in `demo.py`. 
+
+You can also run a batch of games. Specify the games you'd like to run in jobs/{integer}.csv, then run eval.py. Batch results will be saved in /results. 
 
 ## Rules and Gameplay
 Here are the rules provided to every player at the beginning of the game:
@@ -108,9 +110,29 @@ Currently, we have three kinds of agents:
 
 * `cli` is a human playing from the command line. 
 * `random` is an artificial agent that chooses a random action on each turn and doesn't participate in discussions. 
-* `gpt3` uses the OpenAI GPT-3 API to generate actions and discussion dialogue in a zero-shot fashion. 
+* `gpt` uses the OpenAI API to generate actions and discussion dialogue in a zero-shot fashion.
 
-## Roadmap
-The next step will be training a language model with reinforcement learning to achieve better results in the game. Self-play would provide the fastest data collection, but playing with and against humans will be necessary for an accurate evaluation of the model's skills. We'll also experiment with training diverse agents with different policies and altering the game environment to provide richer opportunities for strategic communication. 
+When you're using the OpenAI API, you must specify the endpoint in the agent field. Here are the current options:
+* `gpt-ada`
+* `gpt-babbage`
+* `gpt-curie`
+* `gpt-davinci-001`
+* `gpt-davinci-002`
+* `gpt-3.5`
+* `gpt-4`
 
-One particularly interesting direction would be providing agents with white box access to each other's hidden states. Using the techniques explored in [Discovering Latent Knowledge in Language Models Without Supervision](https://openreview.net/pdf?id=ETKGuby0hcs), we can teach agents to identify lies in embedding space. This would provide experimental evidence about an important question for x-risk safety: Can we apply optimization pressure to the outputs of interpretability methods without compromising the validity of those methods? 
+## Citation
+If you find this useful in your research, please consider citing:
+```
+@misc{ogara2023hoodwinked,
+      title={Hoodwinked: Deception and Cooperation in a Text-Based Game for Language Models}, 
+      author={Aidan O'Gara},
+      year={2023},
+      eprint={2308.01404},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+## License
+`hoodwinked` is licensed under the MIT License. See LICENSE for more details. 
