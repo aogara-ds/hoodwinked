@@ -118,6 +118,8 @@ When you're using the OpenAI API, you must specify the endpoint in the agent fie
 * `gpt-3.5`
 * `gpt-4`
 
+If you'd like to play the game by running a language model locally, simply modify the agent.py file.
+
 ## Citation
 If you find this useful in your research, please consider citing:
 ```
