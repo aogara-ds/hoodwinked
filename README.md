@@ -1,6 +1,6 @@
 # Hoodwinked
 
-Hoodwinked is a text-based murder mystery game modeled after Mafia and Among Us. By forcing humans and language models to communicate in a strategic environment, this game teaches language models the skills of deception, lie detection, and goal-directed communication. This is the official repo for "[Hoodwinked: Cooperation and Deception in a Text-Based Game for Language Models](https://arxiv.org/abs/2308.01404)."
+This is the official repo for "[Hoodwinked: Cooperation and Deception in a Text-Based Game for Language Models](https://arxiv.org/abs/2308.01404)." Hoodwinked is a text-based murder mystery game modeled after Mafia and Among Us. By forcing humans and language models to communicate in a strategic environment, this game teaches language models the skills of deception, lie detection, and goal-directed communication. 
 
 The best way to understand the game is to play it for yourself. You can play it in your browser at [https://hoodwinked.ai](https://hoodwinked.ai). To play it locally, clone the repo and run demo.py. 
 
