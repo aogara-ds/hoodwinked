@@ -1,0 +1,2 @@
+﻿num_games,num_players,impostor_agent,innocent_agent,discussion,start_location
+1,4,gpt-3.5,gpt-ada,TRUE,random
